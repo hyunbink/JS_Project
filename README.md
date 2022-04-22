@@ -9,8 +9,8 @@ In Free-Throws, users will be able to:
 - have option to mute and un-mute sound
 - utilize timed-input-detection to structure user's shot-attempt
 - utilize sprites for animation of player, ball, and net
-- have dynamic data on selected NBA players
-- event-dependent sound effects for flavor
+<!-- - have dynamic data on selected NBA players -->
+- event-dependent sound effects for flavor (background music too)
 - navigation links to select player, play game, reset game, and view high scores
 
 <!-- In addition, this project will include:
@@ -33,13 +33,27 @@ Technologies, Libraries, APIs:
 - npm to manage project dependencies
 
 Implementation Timeline:
-- Friday Afternoon & Weekend: Setup project, including getting webpack up and running. Get canvas to show up on the screen, and spend time getting comfortable with the Canvas API. Create Game, Player, Ball, and Hoop classes. Get a grid rendered to the canvas reflecting the initial state of the cells. 
-* Think of a fun title for game, get sprites, sound effects/music ready for monday
+- Friday Afternoon & Weekend: 
+* Setup project, including getting webpack up and running. 
+* Get canvas to show up on the screen, and spend time getting comfortable with the Canvas API. 
+* Create Game, Player, Ball, and Hoop classes. 
+* Make basic shapes of contents of game (player, ball, hoop) to render on canvas
+* Think of a fun title for game, get sprites, and select sound effects/music ready for Monday
 
-- Monday: Dedicate this day toward implementing the underlying logic of Free-throws. Ensure that I can set up for in-game events. If time, make sure this is all rendered correctly on the canvas.
+- Monday: 
+* Dedicate this day toward implementing the underlying logic of Free-throws (how user will be able to 'shoot', keep track of high score, and how user will select 'player'). 
+* Ensure that I can set up for in-game events.
+* Implement Nav links including toggle for sound
 
-- Tuesday: If I didn't get to it already, get the cells correctly rendered to the canvas. Focus on user controls and navigation: play, stop, and reset.
+- Tuesday: 
+* Make sure everything is correctly rendered to the canvas. 
+* Focus on user controls and navigation: play, stop, and reset.
 
-- Wednesday: Finish implementing user controls, and focus on styling, as well as implementing the different color schemes and nav links. If time, start on bonuses.
+- Wednesday: 
+* Finish implementing user controls, and focus on styling
+* If time, start adding fun facts/ misc data on NBA player.
+* Make sure above is rendering properly for proper player.
 
-- Thursday Morning: Deploy to GitHub pages. If time, rewrite this proposal as a production README.
+- Thursday Morning: 
+* Test drive for bugs.
+* Deploy to GitHub pages. If time, rewrite this proposal as a production README.
