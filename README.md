@@ -39,7 +39,7 @@ Implementation Timeline:
 Friday Afternoon & Weekend: 
 * Setup project, including getting webpack up and running. 
 * Get canvas to show up on the screen, and spend time getting comfortable with the Canvas API. 
-* Create Game, Player, Ball, and Hoop classes. 
+* Create Game, Player, Ball, and Hoop/Net classes. 
 * Make basic shapes of contents of game (player, ball, hoop) to render on canvas
 * Think of a fun title for game, get sprites, and select sound effects/music ready for Monday
 
