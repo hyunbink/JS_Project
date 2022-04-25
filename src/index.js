@@ -1,9 +1,9 @@
-// import { Ball } from "./ball";
+import { Ball } from "./ball";
 import Game from "./game";
-// import { Hoop, Net } from "./hoop";
-// import { Player } from "./player";
+import { Hoop, Net } from "./hoop";
+import { Player } from "./player";
 
-
+// TODO Change index.js to more semantic name (event listener?)
 document.addEventListener("DOMContentLoaded", function () {
     const myCanvas = document.getElementsByTagName("canvas")[0];
     myCanvas.width = 1024;
@@ -12,31 +12,54 @@ document.addEventListener("DOMContentLoaded", function () {
     c.fillStyle = 'blue'
     c.fillRect(0, 0, myCanvas.width, myCanvas.height)
     console.log('DOM fully loaded and parsed');
+    // TODO add "CLICK TO PLAY " or some shit here
+    const player = new Player();
+    player.draw(c);
+
+    const ball = new Ball();
+    ball.draw(c);
+
+    const hoop = new Hoop();
+    hoop.draw(c);
+
+    const net = new Net();
+    net.draw(c)
 
     const newGame = new Game(c);
-    // newGame.animate();
+    let count = 200
+    let stopCount = false
     function animate(){
+        if (stopCount) return count
         requestAnimationFrame(animate)
         c.clearRect(0,0, 1024, 576);
-        newGame.updateX();
-        newGame.movingXLine();
-        // newGame.updateY();
-        // newGame.movingYLine();
-        // player.update();
-        // platform.draw();
+        if (count < 500){
+            newGame.updateX();
+            count += 1
+        } else if (count >= 500){
+            newGame.updateXLeft();
+            count +=1;
+        } if (count === 800){
+            count = 200;
+        } 
+        console.log(count)
+        newGame.movingXLine();    // only rendering second line ???
     }
-    animate();
 
-    // const player = new Player();
-    // player.draw(c);
+    function stopAnimate(){
+        console.log("STOPPING ANIMATE")
+        stopCount = true;
 
-    // const ball = new Ball();
-    // ball.draw(c);
+    }
+let userClick = 0
+    document.addEventListener("click", function(){
+        userClick += 1
+        if (userClick % 2 === 0){
+            stopAnimate();
+        }   else {
+            // stopCount = false; if I want to render animate again
+            animate();
+        }
+    });
 
-    // const hoop = new Hoop();
-    // hoop.draw(c);
-
-    // const net = new Net();
-    // net.draw(c)
 });
 
