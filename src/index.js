@@ -3,17 +3,17 @@ import Game from "./game";
 import { Hoop, Net } from "./hoop";
 import { Player } from "./player";
 
-let scoreCounter = 0
-let speed = 1
-let scoreIncrement = 5
+let scoreCounter = 0;
+let speed = 1;
+let scoreIncrement = 5;
 export const lineSpeed = function (){
     // if (scoreCounter % scoreIncrement !== 0 && (scoreCounter !== 0)){
     //     return speed;
     // } else if (scoreCounter % scoreIncrement === 0 && (scoreCounter !== 0)) {
-    //     let newSpeed = speed + 3;  // need to figoure out how to concat speed
-    // without it constnatly concatinating
+    //     let newSpeed = speed + 3;  // need to figure out how to increase speed
+    // without hard-coding
     // } else {return speed}
-    // return speed += 1
+    // return speed += 1   concat does not work like this, ends up increasing every render, aka too fast too soon
     // TODO make these conditionals simple
     if (scoreCounter < 3) {
         return speed;
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     myCanvas.width = 1024;
     myCanvas.height = 576;
     const c = myCanvas.getContext("2d");
-    c.fillStyle = 'blue'
-    c.fillRect(0, 0, myCanvas.width, myCanvas.height)
+    c.fillStyle = 'blue';
+    c.fillRect(0, 0, myCanvas.width, myCanvas.height);
     console.log('DOM fully loaded and parsed');
     // TODO add "CLICK TO PLAY " or some shit here
     const player = new Player();
@@ -54,15 +54,15 @@ document.addEventListener("DOMContentLoaded", function () {
     hoop.draw(c);
 
     const net = new Net();
-    net.draw(c)
+    net.draw(c);
 
     const newGame = new Game(c);
-    let count = 200
-    let stopCount = false
-    let highScore = 0
+    let count = 200;
+    let stopCount = false;
+    let highScore = 0;
     function animate(){
-        if (stopCount) return count
-        requestAnimationFrame(animate)
+        if (stopCount) return count;
+        requestAnimationFrame(animate);
         // c.clearRect(0,0, 1024, 576);
         if (count < 500){
             newGame.updateX();
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } 
         // userXAttempt = newGame.movingLineXPos();
         // console.log(newGame.xMakeArr());
-        newGame.movingXLine();    // only rendering second line ???
+        newGame.movingXLine();  
     }
     let userXAttempt = 0;
     
@@ -89,15 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
 let userClick = 0
     document.addEventListener("keydown", function(event){
         if (event.key !== ' ') {
-            console.log('PRESS SPACE TO PLAY')
-            return
+            console.log('PRESS SPACE TO PLAY');
+            return;
         }; 
+        // TODO Add events for when user gets on 'fire'
         userClick += 1;
         if (userClick % 2 === 0){
             // console.log(count)
             stopAnimate();
             if (newGame.xMakeArr().includes(userXAttempt)) {
-                // TODO make made shot animation/value;
                 scoreCounter += 1;
                 if (scoreCounter > highScore){
                     highScore = scoreCounter;
@@ -111,10 +111,11 @@ let userClick = 0
                 console.log(userXAttempt);
                 console.log(scoreCounter);
                 console.log(highScore);
+                if (highScore === scoreCounter && scoreCounter !== 0) {
+                    console.log("NEW HIGH SCORE")
+                } else console.log("BRICK");
                 scoreCounter = 0;
-                console.log("BRICK")
                 // return false;
-                // TODO set up new game instance
             }
         }   else {
             stopCount = false; //if I want to render animate again
