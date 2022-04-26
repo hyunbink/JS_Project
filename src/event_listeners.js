@@ -1,6 +1,7 @@
 import { Ball } from "./ball";
-import Game from "./game";
-import { Hoop, Net } from "./hoop";
+import { Court } from "./court";
+import Game from "./game_view";
+import { Hoop, Net } from "./net";
 import { Player } from "./player";
 
 let scoreCounter = 0;
@@ -43,7 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
     c.fillStyle = 'blue';
     c.fillRect(0, 0, myCanvas.width, myCanvas.height);
     console.log('DOM fully loaded and parsed');
-    // TODO add "CLICK TO PLAY " or some shit here
+    // TODO add title page?? 'press space to play'??
+
+    // const background = new Court();
+    // background.draw(c);
+
     const player = new Player();
     player.draw(c);
 
