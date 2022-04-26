@@ -6,8 +6,8 @@ export class Player {
     }
 
     draw(c) {
-        c.fillStyle = 'red'
-        c.fillRect(715, 490, 30, 80)
+        c.fillStyle = 'cyan'
+        c.fillRect(308, 265, 30, 80)
     }
 }
 
@@ -15,3 +15,4 @@ export class Player {
 
 // console.log(star)
 // star.draw();
+

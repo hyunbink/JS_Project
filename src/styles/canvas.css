@@ -1,0 +1,29 @@
+h1{
+    display: flex;
+  }
+  
+  .navHeader a{
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+  
+    ;
+  }
+  
+  /* get instruction to be right of game */
+  .instruction{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* #soundControl{ */
+    /* have this on canvas */
+  /* } */
+  
+  canvas{
+    background-image: url('../images/sprites/halfcourt.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
