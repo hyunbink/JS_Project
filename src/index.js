@@ -5,16 +5,7 @@ import { Player } from "./player";
 
 let scoreCounter = 0;
 let speed = 1;
-// let scoreIncrement = 5;
 export const lineSpeed = function (){
-    // if (scoreCounter % scoreIncrement !== 0 && (scoreCounter !== 0)){
-    //     return speed;
-    // } else if (scoreCounter % scoreIncrement === 0 && (scoreCounter !== 0)) {
-    //     let newSpeed = speed + 3;  // need to figure out how to increase speed
-    // without hard-coding
-    // } else {return speed}
-    // return speed += 1   concat does not work like this, ends up increasing every render, aka too fast too soon
-    // TODO make these conditionals simple
     if (scoreCounter < 3) {
         return speed;
     } else if (scoreCounter < 6) {
@@ -43,18 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log('DOM fully loaded and parsed');
     // TODO add title page?? 'press space to play'??
-
-    const player = new Player();
-    player.draw(c);
-
-    const ball = new Ball();
-    ball.draw(c);
-
-
-    const net = new Net();
-    net.draw(c);
-
     const newGame = new Game(c);
+
     let count = 200;
     let stopCount = false;
     let highScore = 0;
@@ -83,36 +64,60 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
 let userClick = 0
+// TODO add cd to wait for animation to finish?
     document.addEventListener("keydown", function(event){
         if (event.key !== ' ') {
             console.log('PRESS SPACE TO PLAY');
             return;
         }; 
-        // TODO Add events for when user gets on 'fire'
+        // TODO Add events for when user gets on 'fire'??
         userClick += 1;
         if (userClick % 2 === 0){
             stopAnimate();
-            if (newGame.xMakeArr().includes(userXAttempt)) {
-                scoreCounter += 1;
-                if (scoreCounter > highScore){
-                    highScore = scoreCounter;
-
-                } // make this a separate function, then have it render new game;
-                console.log(userXAttempt);
-                console.log(scoreCounter);
-                // return true;
-            } else {
-                console.log(userXAttempt);
-                console.log(scoreCounter);
-                console.log(highScore);
-                if (highScore === scoreCounter && scoreCounter !== 0) {
-                    console.log("NEW HIGH SCORE")
-                } else console.log("BRICK");
-                scoreCounter = 0;
-                // return false;
-            }
+            newGame.player.status = 'shooting';
+            console.log(newGame.player.status);
+            newGame.renderShot();
+            setTimeout(function(){
+                newGame.player.status = 'release';
+                newGame.renderShot();
+                console.log(newGame.player.status);
+                if (newGame.xMakeArr().includes(userXAttempt)) {
+                    // TODO render made shot animation
+                    setTimeout(function(){
+                        newGame.net.status = 'made1'
+                        newGame.renderShot();
+                    }, 200);
+                    setTimeout( function(){
+                        newGame.net.status = 'made2'
+                        newGame.renderShot();
+                    },400);
+                    setTimeout(function(){
+                        newGame.net.status = 'made3'
+                        newGame.renderShot();
+                    },600);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.renderShot();
+                        scoreCounter += 1;
+                        if (scoreCounter > highScore){
+                            highScore = scoreCounter;
+                        } 
+                        console.log(scoreCounter);
+                    },800);
+                } else {
+                    // TODO render missed shot animation
+                    console.log(scoreCounter);
+                    console.log(highScore);
+                    if (highScore === scoreCounter && scoreCounter !== 0) {
+                        console.log("NEW HIGH SCORE");
+                    } else console.log("BRICK");
+                    scoreCounter = 0;
+                }
+            }, 500)
         }   else {
-            stopCount = false; //if I want to render animate again
+            stopCount = false;
+            newGame.player.status = 'idle';
+            console.log(newGame.player.status);
             animate();
         }
     });

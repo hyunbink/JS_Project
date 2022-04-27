@@ -3,22 +3,16 @@ import  Net  from "./net";
 import { Ball } from "./ball";
 import {lineSpeed} from ".";
 
-// const Player = require("./player");
-// const Ball = require("./ball");
-// const Hoop = require("./hoop");
-
-// TODO have separate class for drawing lines, can't do multiple canvas
 class Game {
     constructor(c){
         this.c = c;
         this.movingLineXPos = {x: 200, y: 100}
-        this.player = new Player();
+        this.player = new Player('idle');
         this.net = new Net();
         this.ball = new Ball();
     }
 
     drawXBar(){
-        // console.log(this.movingLineXPos)
         this.c.fillStyle = 'purple'
         this.c.fillRect(200, 100, 305, 50)
     }
@@ -29,28 +23,35 @@ class Game {
 
     xMakeArr(){
         let arr = [];
-        for (let i = 330; i <=  375; i++) {
-            arr.push(i);
-            
-        }
+        for (let i = 330; i <=  375; i++) arr.push(i);
         return arr;
     }
 
     
     drawBoard(){
+        this.c.clearRect(0, 0, 576, 576);
         this.player.draw(this.c);
         this.net.draw(this.c);
         this.ball.draw(this.c);
         this.drawXBar();
         this.drawXMakeBar();
-
     }
 
+    renderShot(){
+        this.c.clearRect(0, 0, 576, 576);
+        this.player.draw(this.c);
+        this.net.draw(this.c);
+        // this.ball.draw(this.c);
+    };
 
+    // shotNet(){
+    //     this.c.clearRect(0, 0, 576, 576);
+    //     this.player.draw(this.c);
+    //     // if made shot 
+    // };
 
     updateX(){   
         this.movingLineXPos.x += lineSpeed();
-        // console.log(this.movingLineXPos.x);
         this.movingXLine();
         this.drawBoard();
         return this.movingLineXPos.x
