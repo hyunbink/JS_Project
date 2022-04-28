@@ -2,6 +2,7 @@ import { Player } from "./player";
 import  Net  from "./net";
 import { Ball } from "./ball";
 import {lineSpeed} from ".";
+import { extraPlayer } from "./extraPlayer";
 
 class Game {
     constructor(c){
@@ -10,6 +11,7 @@ class Game {
         this.player = new Player('idle');
         this.net = new Net();
         this.ball = new Ball();
+        this.extraPlayer = new extraPlayer();
     }
 
     drawXBar(){
@@ -31,6 +33,7 @@ class Game {
     drawBoard(){
         this.c.clearRect(0, 0, 576, 576);
         this.player.draw(this.c);
+        this.extraPlayer.draw(this.c);
         this.net.draw(this.c);
         this.ball.draw(this.c);
         this.drawXBar();
@@ -41,14 +44,10 @@ class Game {
         this.c.clearRect(0, 0, 576, 576);
         this.player.draw(this.c);
         this.net.draw(this.c);
+        this.extraPlayer.draw(this.c);
         // this.ball.draw(this.c);
     };
 
-    // shotNet(){
-    //     this.c.clearRect(0, 0, 576, 576);
-    //     this.player.draw(this.c);
-    //     // if made shot 
-    // };
 
     updateX(){   
         this.movingLineXPos.x += lineSpeed();

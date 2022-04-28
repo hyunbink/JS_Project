@@ -6,28 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
-    <title>Project Name</title>
-    <h1>Title</h1>
-    <nav class="navHeader">
-      <a href="https://github.com/hyunbink"><img src="/images/githublogo.png" alt="github logo"></a>
-      <a href="https://www.linkedin.com/in/matia-kim/"><img src="/images/linkedinlogo.png" alt="linkedin logo"></a>
-    </nav>
+    <title>Retro-Hoops</title>
   </head>
-
+  
+  
+  
   <body>
-    <nav class="gameNav">gameNav
+    <div id="header">
+      <div id="headerSplit">
+      <div id="titleDiv">
+        <img src="/images/title_header.png" alt="Retro-Hoops">
+      </div>
+      <div id="audioDiv">
+        <audio id="soundControl" controls autoplay loop muted>
+          <source src="/audio/planetrock.mp3" type="audio/ogg">
+          Your browser does not support this audio element.
+        </audio>
+      </div>
+      <nav class="gameNav">
+        <a href="https://github.com/hyunbink"><img src="/images/githublogo.png" alt="github logo"></a>
+        <a href="https://www.linkedin.com/in/matia-kim/"><img src="/images/linkedinlogo.png" alt="linkedin logo"></a>
         <!-- TODO get a new sound logo ? || update sound bar? -->
-      <audio id="soundControl" controls autoplay loop muted>
-        <source src="/audio/planetrock.mp3" type="audio/ogg">
-        Your browser does not support this audio element.
-      </audio>
-    </nav>
+      </nav>
+      </div>
+    </div>
     
-    <canvas>
-    </canvas>
-    <div class="instructions">instructions</div>
+    <div id="gameDiv">
+      <div id="canvasDiv">
+        <div id="coverPageDiv">
+          <img src="/images/title_cover.png" alt="Press 'Space' to Play!">
+        </div>
+        <div id="scoreBoard">
+          <div><span>
+        <img id="score" src="/images/score.png" alt="Score:">
+          </span><span id="currentScore">0</span></div>
+          <div><span>
+        <img id='record' src="/images/record.png" alt="Record:">
+          </span><span id="highScore">0</span></div>
+        </div>
+        <canvas id="canvas"></canvas>
+        </div>
+        <div id="instructions">
+        <ul>
+            <h3>How To Play:</h3>
+            <li>Press 'Space' to start shot attempt</li>
+            <li>Press 'Space' to attempt shot</li>
+            <li>Press 'Space' to continue</li>
+          </ul>
+        </div>
+      </div>
+
   </body>
 
 </html>
 
-<!-- TODO how to render data from index.js to display messages, scores, etc. -->

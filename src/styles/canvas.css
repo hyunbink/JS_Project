@@ -1,29 +1,143 @@
-h1{
-    display: flex;
-  }
-  
-  .navHeader a{
-    background-color: black;
-    width: 40px;
-    height: 40px;
-    display: flex;
-  
-    ;
-  }
-  
-  /* get instruction to be right of game */
-  .instruction{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* #soundControl{ */
-    /* have this on canvas */
-  /* } */
-  
-  canvas{
-    background-image: url('../images/sprites/halfcourt.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
+
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.812);
+  overflow-x: auto;
+}
+/* grid-template-columns: 1fr 200px;
+grid-template-rows: 100px 1fr ; */
+/* margin: 0;
+height: 100vh; */
+
+#header{
+  margin-top: 10px;
+  height: 5%;
+  margin-bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+#headerSplit{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#coverPageDiv{
+  position: fixed;
+  height: 576px;
+  background: rgba(0,0,0,0.5);
+}
+
+#coverPageDiv img{
+  margin: 28% 0;
+}
+
+#titleDiv{
+  margin-top: 10px;
+}
+
+
+
+/* #coverPageDiv{
+  grid-row: 2/-1;
+  grid-column: 1/2;
+  z-index: 5;
+  /* position: fixed; */
+  /* top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; */
+  /* background-color: black;
+} */
+
+.gameNav{
+  display: flex;
+  justify-content: flex-end;
+  /* position: absolute;
+  bottom: 90%;
+  left: 480px; */
+
+}
+/* grid-column: 1/-1;
+grid-row: span 1; */
+/* flex-direction: row; */
+
+a img{
+  /* background-color: black; */
+  width: 40px;
+  height: 40px;    
+  margin-right: 10px;
+}
+
+#soundControl{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* #titleP{
+  margin: 0;
+  font-size: 100px;
+} */
+
+#gameDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* position: absolute; */
+  top: 0%;
+  margin-top: 0;
+}
+
+/* #canvasDiv{
+  display: flex;
+  justify-content: flex-start;
+} */
+
+#scoreBoard{
+  position: fixed;
+  color: white;
+  user-select: none;
+  background: transparent;
+}
+#score{
+  width: 100px;
+}
+
+#record{
+  width: 100px;
+}
+
+
+canvas{
+  background-image: url('../images/sprites/halfcourt.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+h3 {
+  font-family: monospace;
+  color: whitesmoke;
+  font-size: larger;
+
+}
+ul{
+  margin-left: 0;
+  margin: 0;
+  user-select: none;
+}
+li {
+  font-family: monospace;
+  color: whitesmoke;
+  font-size: large;
+}
+
+
+
+
+
+

@@ -24,16 +24,35 @@ export const lineSpeed = function (){
         return speed + 21;
     }
 }
+const tallyScore = function(scoreCounter, highScore){
+    const score = document.getElementById("currentScore");
+    const record = document.getElementById("highScore");
+    score.innerHTML = scoreCounter;
+    record.innerHTML = highScore;
+}
+
+const coverPage = function(bool = true){
+    const coverPage = document.getElementById("coverPageDiv");
+    // coverPage.parentNode.removeChild(coverPage);
+    if (bool) coverPage.style.display = 'none';
+    else coverPage.style.display = 'block';
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
     const myCanvas = document.getElementsByTagName("canvas")[0];
-    myCanvas.width = 576;
-    myCanvas.height = 576;
+    myCanvas.width = 576; //'100%';
+    myCanvas.height = 576;//'100%';
+    // Make it visually fill the positioned parent
+//   myCanvas.style.width ='100%';
+//   myCanvas.style.height='100%';
+//   // ...then set the internal size to match
+//   myCanvas.width  = myCanvas.offsetWidth;
+//   myCanvas.height = myCanvas.offsetHeight;
     const c = myCanvas.getContext("2d");
-
-    console.log('DOM fully loaded and parsed');
     // TODO add title page?? 'press space to play'??
+    
     const newGame = new Game(c);
 
     let count = 200;
@@ -67,22 +86,26 @@ let userClick = 0
 // TODO add cd to wait for animation to finish?
     document.addEventListener("keydown", function(event){
         if (event.key !== ' ') {
-            console.log('PRESS SPACE TO PLAY');
+            // console.log('PRESS SPACE TO PLAY');
             return;
         }; 
         // TODO Add events for when user gets on 'fire'??
+        if (userClick === 0) coverPage();
+        // setTimeout(()=>userClick += 1, 1000);
         userClick += 1;
         if (userClick % 2 === 0){
             stopAnimate();
             newGame.player.status = 'shooting';
-            console.log(newGame.player.status);
             newGame.renderShot();
             setTimeout(function(){
                 newGame.player.status = 'release';
                 newGame.renderShot();
-                console.log(newGame.player.status);
+                // console.log(newGame.player.status);
+                // TODO ball animation
                 if (newGame.xMakeArr().includes(userXAttempt)) {
-                    // TODO render made shot animation
+                    // count = 200;
+                    //     newGame.movingLineXPos.x = 200;
+                    scoreCounter += 1;
                     setTimeout(function(){
                         newGame.net.status = 'made1'
                         newGame.renderShot();
@@ -97,30 +120,87 @@ let userClick = 0
                     },600);
                     setTimeout(function(){
                         newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'rebound';
                         newGame.renderShot();
-                        scoreCounter += 1;
+                    },700);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'pass';
+                        newGame.renderShot();
+                    },800);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        newGame.renderShot();
+                    },900);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        newGame.player.status = 'idle';
+                        newGame.renderShot();
+                    },1000);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.renderShot();
                         if (scoreCounter > highScore){
                             highScore = scoreCounter;
                         } 
-                        console.log(scoreCounter);
+                        tallyScore(scoreCounter, highScore);
+                        // count = 200;
+                        // newGame.movingLineXPos.x = 200;
                     },800);
                 } else {
-                    // TODO render missed shot animation
-                    console.log(scoreCounter);
-                    console.log(highScore);
-                    if (highScore === scoreCounter && scoreCounter !== 0) {
-                        console.log("NEW HIGH SCORE");
-                    } else console.log("BRICK");
-                    scoreCounter = 0;
+                    // console.log(scoreCounter);
+                    // console.log(highScore);
+                        // count = 200;
+                        // newGame.movingLineXPos.x = 200;
+                        scoreCounter = 0;
+                    setTimeout(function(){
+                        newGame.net.status = 'miss'
+                        newGame.renderShot();
+                        tallyScore(scoreCounter, highScore);
+                    },600);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'rebound';
+                        newGame.renderShot();
+                    },700);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'pass';
+                        newGame.renderShot();
+                    },800);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        newGame.renderShot();
+                    },900);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        newGame.player.status = 'idle';
+                        newGame.renderShot();
+                    },1000);
+                    // if (highScore === scoreCounter && scoreCounter !== 0) {
+                        // console.log("NEW HIGH SCORE");
+                        // TODO new HIGH SCORE animation;
+                    // } 
+                    // count = 200;
+                    // newGame.movingLineXPos.x = 200;
                 }
-            }, 500)
+            }, 100)
         }   else {
+            count = 200;
+            newGame.movingLineXPos.x = 200;
             stopCount = false;
             newGame.player.status = 'idle';
-            console.log(newGame.player.status);
+            // console.log(newGame.player.status);
             animate();
         }
+        // tallyScore(scoreCounter);
     });
+    // setTimeout( gamePlay() , 1000);
+
 });
 
 
