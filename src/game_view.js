@@ -35,7 +35,7 @@ class Game {
         this.player.draw(this.c);
         this.extraPlayer.draw(this.c);
         this.net.draw(this.c);
-        this.ball.draw(this.c);
+        // this.ball.draw(this.c);
         this.drawXBar();
         this.drawXMakeBar();
     }

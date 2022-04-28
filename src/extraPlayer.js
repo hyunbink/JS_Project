@@ -7,7 +7,7 @@ export class extraPlayer {
         this.width = 30;
         this.height = 200;
         this.image = new Image();
-        this.image.src = "images/sprites/Player B/Player B Stand Shoot (with ball)/player_B_S_Shoot_East_WITHBALL_strip3-75x75.png"
+        this.image.src = "images/sprites/Player B/Player B Stand Shoot (with ball)/rebounder_passer.png"
     }
     draw(c) {
         let sx = 50
