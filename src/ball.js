@@ -26,7 +26,7 @@ export class Ball {
         this.width = 50;
         this.height = 40;
         this.image = new Image();
-        this.image.src = "../images/sprites/net.png"
+        this.image.src = "images/sprites/net.png"
     }
 
     draw(c){
