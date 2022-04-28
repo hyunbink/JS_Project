@@ -7,8 +7,9 @@ export default class Net {
         this.width = 50;
         this.height = 40;
         this.image = new Image();
-        this.image.src = "../images/sprites/NES_Basket_and_Ball_SpriteSheet-100x100.png"
+        this.image.src = "/test/sprites/NES_Basket_and_Ball_SpriteSheet-100x100.png"
     }
+
 
     draw(c){
         let sy = 0;
