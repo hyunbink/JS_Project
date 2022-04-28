@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const myCanvas = document.getElementsByTagName("canvas")[0];
     myCanvas.width = 576; //'100%';
     myCanvas.height = 576;//'100%';
-    console.log("TESTING HELLO")
+    console.log("TESTING Pushed 11:21")
     // Make it visually fill the positioned parent
 //   myCanvas.style.width ='100%';
 //   myCanvas.style.height='100%';
