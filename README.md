@@ -62,3 +62,11 @@ Wednesday:
 Thursday Morning: 
 * Test drive for bugs.
 * Deploy to GitHub pages. If time, rewrite this proposal as a production README.
+
+After Thursday:
+* Add audio and visual events? (Made/miss/highscore)
+* Make positions for images dynamic
+* Make a function to do all animations/changes for me (clean up setTimeouts DRY)
+* Clean up code, get rid of console.logs, make it presentable to recruiters
+* Update readme’s
+* Make it mobile friendly
