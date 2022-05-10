@@ -2,18 +2,17 @@
 
 Background:
 
-Retro-Hoops is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. A user will select from the displayed NBA players with their career free-throw percentage. Difficulty to make a free-throw will depend on the player they choose (their career free-throw%) and current score (increasing in difficulty as score increases). The game will have background music/sound effects and visuals from free online sources.
+Retro-Hoops is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. Difficulty to make a free-throw will depend on the current score (increasing in difficulty as score increases). The game will have background music/sound effects and visuals from free online sources.
 
 
 Functionality & MVPs:
 
 In Retro-Hoops, users will be able to:
-- have option to mute and un-mute sound
+- experience event-dependent sound effects (WIP)
+- option to mute and un-mute background-music
 - utilize timed-input-detection to structure user's shot-attempt
 - utilize sprites for animation of player, ball, and net
-<!-- - have dynamic data on selected NBA players -->
-- event-dependent sound effects for flavor (background music too)
-- navigation links to select player, play game, reset game, and view high scores
+- navigation links to select player, play game, reset game, and view high scores (WIP)
 
 <!-- In addition, this project will include:
 
@@ -34,7 +33,6 @@ Technologies, Libraries, APIs:
 - Canvas API to render game board
 - Webpack and Babel to bundle and transpile the source JavaScript code 
 - npm to manage project dependencies
-- Depending on time, will implement API's for basketball teams/players
 
 Implementation Timeline:
 
