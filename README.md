@@ -2,7 +2,7 @@
 
 Background:
 
-    Retro-Hoops is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. A user will select from the displayed NBA players with their career free-throw percentage. Difficulty to make a free-throw will depend on the player they choose (their career free-throw%) and current score (increasing in difficulty as score increases). The game will have background music/sound effects and visuals from free online sources.
+Retro-Hoops is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. A user will select from the displayed NBA players with their career free-throw percentage. Difficulty to make a free-throw will depend on the player they choose (their career free-throw%) and current score (increasing in difficulty as score increases). The game will have background music/sound effects and visuals from free online sources.
 
 
 Functionality & MVPs:
