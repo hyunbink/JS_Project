@@ -170,6 +170,7 @@ a img {
   align-items: center;
   border-radius: 5px;
   border: solid 2px rgba(255, 255, 255, 0.864);
+  margin-right: 2px;
 }
 
 .score-label {
