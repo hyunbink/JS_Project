@@ -10,8 +10,6 @@ export default class Ball {
     }
 
     draw(c){
-        // let sy = 80;
-        let that = this;
         if (this.status === 'make1'){
             c.drawImage(this.image, 85, 0, 30, 18, 300, 255, 30, 18);
         } else if (this.status === 'make2') {
@@ -54,10 +52,28 @@ export default class Ball {
             c.drawImage(this.image, 85, 17, 18, 18, 272, 295, 18, 18);
         } else if (this.status === 'pass8') {
             c.drawImage(this.image, 67, 0, 18, 18, 285, 295, 18, 18);
+        } else if (this.status === 'miss1'){
+            c.drawImage(this.image, 85, 0, 30, 18, 300, 259, 30, 18);    ///
+        } else if (this.status === 'miss2') {
+            c.drawImage(this.image, 67, 0, 18, 18, 285, 255, 18, 18);
+        } else if (this.status === 'miss3') {
+            c.drawImage(this.image, 85, 17, 18, 18, 272, 245, 18, 18);
+        } else if (this.status === 'miss4') {
+            c.drawImage(this.image, 34, 0, 18, 18, 258, 234, 18, 18);
+        } else if (this.status === 'miss5') {
+            c.drawImage(this.image, 51, 0, 17, 17, 240, 227, 17, 17);
+        } else if (this.status === 'miss6') {
+            c.drawImage(this.image, 85, 0, 30, 18, 222, 223, 30, 18);
+        } else if (this.status === 'miss7') {
+            c.drawImage(this.image, 67, 0, 18, 18, 202, 221, 18, 18); //peak
+        } else if (this.status === 'miss8') {
+            c.drawImage(this.image, 85, 17, 18, 18, 185, 231, 18, 18);
+        } else if (this.status === 'miss9') {
+            c.drawImage(this.image, 34, 0, 18, 18, 167, 241, 18, 18);
+        } else if (this.status === 'miss10') {
+            c.drawImage(this.image, 51, 18, 17, 17, 150, 250, 17, 17);
+        } else if (this.status === 'miss11') {
+            c.drawImage(this.image, 85, 80, 30, 33, 145, 255, 30, 33);
         }
     }
 }
-
-// pos of net will always be [130, 233];
-
-// return c.drawImage(this.image, 85, 80, 30, 33, 300, 255, 30, 33);    //default ball
