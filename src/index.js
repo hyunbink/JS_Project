@@ -40,13 +40,33 @@ const addStreak = (scoreCounter, highScore, brick) => {
         streak.innerHTML = "<img id='on-fire' src='../images/on_fire.png'></img>";
         // streak.innerHTML = <img src='./images/on_fire.png'></img>
     } else if (brick === 'brick') {
-        streak.innerHTML = "<img id='on-fire' src='../images/brick.png'></img>";
+        streak.innerHTML = "<img id='brick-img' src='../images/brick.png'></img>";
         // streak.innerHTML = <img id='on-fire' src='./images/brick.png'></img>;
         setTimeout(()=>{
             streak.innerHTML = ""
         }, 2400);
     }
 }
+
+const newRecord = (bool) => {
+    const record = document.getElementById("record-holder")
+    if (bool === true) {
+        record.innerHTML = "<img id='new-record' src='../images/new_record.png'></img>";
+        // streak.innerHTML = <img src='./images/new_record.png'></img>;
+        setTimeout(()=>{
+            record.innerHTML = "<img id='play-again' src='../images/play-again.png'></img>";
+        // record.innerHTML = <img src='./images/play-again.png'></img>;
+        }, 2400);
+    } else if (bool === 'shoot') {
+        record.innerHTML = "<img id='play-again' src='../images/shoot-again.png'></img>";
+        // record.innerHTML = <img src='./images/shoot-again.png'></img>;
+    } else if (bool === 'again') {
+        record.innerHTML = "<img id='play-again' src='../images/play-again.png'></img>";
+        // record.innerHTML = <img src='./images/play-again.png'></img>;
+    } else {
+        record.innerHTML = ""
+    }
+    }
 
 const coverPage = function(bool = true){
     const coverPage = document.getElementById("coverPageDiv");
@@ -178,7 +198,7 @@ let gamePlay = false;
                         newGame.renderShot();
                         gamePlay = true;
                         userClick = 1;  
-                        console.log("space to play"); // TODO instruct here 
+                        newRecord('shoot')
                     },2700);
                 } else {
                     ballMissAnimation.forEach(i => {
@@ -188,12 +208,19 @@ let gamePlay = false;
                             newGame.renderShot();
                         }, ((i * 80)))
                     })
-                        scoreCounter = 0;
-
+                    
                     setTimeout(function(){
                         newGame.renderShot();
-                        tallyScore(scoreCounter, highScore);
-                        addStreak(scoreCounter, highScore, 'brick');
+                        if (highScore === scoreCounter && scoreCounter !== 0) {
+                            scoreCounter = 0;
+                            newRecord(true);
+                            addStreak(scoreCounter, highScore, 'na');
+                            tallyScore(scoreCounter, highScore);
+                        } else {
+                            scoreCounter = 0;
+                            tallyScore(scoreCounter, highScore);
+                            addStreak(scoreCounter, highScore, 'brick');
+                        }
                     },880);
 
                     setTimeout(function(){
@@ -223,22 +250,21 @@ let gamePlay = false;
                         newGame.renderShot();
                         gamePlay = true;
                         userClick = 1;
-                        console.log("space to play") // TODO instruct here
-                        if (highScore === scoreCounter && scoreCounter !== 0) {
-                            // TODO new HIGH SCORE animation;
-                            console.log("NEW HIGH SCORE");
-                        } 
+                        newRecord('again')
                     },1800);
                 }
             }, 300)
         }   else if (gamePlay) {
-            console.log("remove instruction"); // TODO remove instructions here
             count = 200;
             newGame.movingLineXPos.x = 200;
             stopCount = false;
             newGame.player.status = 'idle';
             animate();
             userClick += 1;
+            const recordHolder = document.getElementById("record-holder");
+            const streakHolder = document.getElementById("streak-holder")
+            streakHolder.innerHTML = ""
+            recordHolder.innerHTML = ""
         }
     });
 });

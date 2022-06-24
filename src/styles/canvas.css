@@ -177,9 +177,46 @@ a img{
   margin-left: 15px;
 }
 
+.record{
+  position: absolute;
+  background: transparent;
+  user-select: none;
+  height: 576px;
+  width: 576px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#brick-img{
+  margin-left: 100px;
+}
+
+#new-record{
+  width: 300px;
+  height: auto;
+}
+#play-again{
+  width: 300px;
+  height: auto;
+}
+
 #on-fire{
   margin-left: 80px;
 }
+
+#record-holder{
+  width: fit-content;
+  height: fit-content;
+}
+
+/* #rew-record-img{
+  margin-left: 80px;
+  width: 300px;
+  height: auto;
+} */
+
+
 
 .scores{
   height: 120px;
