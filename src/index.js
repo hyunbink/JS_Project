@@ -84,17 +84,24 @@ document.addEventListener("DOMContentLoaded", function () {
 let userClick = 0;
 const ballShotAnimation = [1,2,3,4,5,6,7,8,9,10,11];
 const ballPassAnimation = [1,2,3,4,5,6,7,8,9];
-// const netAnimations = []
+let gamePlay = false;
 // TODO add cd to wait for animation to finish
     document.addEventListener("keydown", function(event){
         if (event.key !== ' ') {
             return;
         }; 
         // TODO Add events for when user gets on 'fire'??
-        if (userClick === 0) coverPage();
-        // setTimeout(()=>userClick += 1, 1000);
-        userClick += 1;
-        if (userClick % 2 === 0){
+        if (userClick === 0) {
+            coverPage();
+            gamePlay = true;
+            userClick += 1;
+        }
+        // if (gamePlay && userClick % 2 !==0) {
+        //     userClick += 1;
+        // }
+        // userClick += 1;
+        if (userClick % 2 === 0 && gamePlay){
+            gamePlay = false;
             stopAnimate();
             newGame.player.status = 'shooting';
             newGame.renderShot();
@@ -148,7 +155,6 @@ const ballPassAnimation = [1,2,3,4,5,6,7,8,9];
                             setTimeout(()=>{
                                 newGame.net.status = 'idle';
                                 newGame.ball.status = `pass${i}`; 
-                                // newGame.player.status = 'release';
                                 newGame.renderShot();
                             }, ((i * 60) ))
                         })
@@ -158,8 +164,9 @@ const ballPassAnimation = [1,2,3,4,5,6,7,8,9];
                         newGame.net.status = 'idle'
                         newGame.extraPlayer.status = 'idle';
                         newGame.player.status = 'idle';
-                        // newGame.ball.status = 'none'
                         newGame.renderShot();
+                        gamePlay = true;
+                        userClick = 1;             
                     },2700);
                 } else {
                         scoreCounter = 0;
@@ -197,12 +204,13 @@ const ballPassAnimation = [1,2,3,4,5,6,7,8,9];
                     // newGame.movingLineXPos.x = 200;
                 }
             }, 300)
-        }   else {
+        }   else if (gamePlay) {
             count = 200;
             newGame.movingLineXPos.x = 200;
             stopCount = false;
             newGame.player.status = 'idle';
             animate();
+            userClick += 1;
         }
         // tallyScore(scoreCounter);
     });
