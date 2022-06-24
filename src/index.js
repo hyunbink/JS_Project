@@ -31,6 +31,23 @@ const tallyScore = function(scoreCounter, highScore){
     record.innerHTML = highScore;
 }
 
+const addStreak = (scoreCounter, highScore, brick) => {
+    const streak = document.getElementById("streak-holder")
+    if (scoreCounter >= 3 && scoreCounter < 6) {
+        streak.innerHTML = "<img src='../images/heating_up.png'></img>";
+        // streak.innerHTML = <img src='./images/heating_up.png'></img>
+    } else if (scoreCounter >= 6) {
+        streak.innerHTML = "<img id='on-fire' src='../images/on_fire.png'></img>";
+        // streak.innerHTML = <img src='./images/on_fire.png'></img>
+    } else if (brick === 'brick') {
+        streak.innerHTML = "<img id='on-fire' src='../images/brick.png'></img>";
+        // streak.innerHTML = <img id='on-fire' src='./images/brick.png'></img>;
+        setTimeout(()=>{
+            streak.innerHTML = ""
+        }, 2400);
+    }
+}
+
 const coverPage = function(bool = true){
     const coverPage = document.getElementById("coverPageDiv");
     // coverPage.parentNode.removeChild(coverPage);
@@ -134,17 +151,7 @@ let gamePlay = false;
                             highScore = scoreCounter;
                         } 
                         tallyScore(scoreCounter, highScore);
-                        if (scoreCounter >= 3 && scoreCounter < 6) {
-                            console.log("Heating Up");
-                            // TODO heating up here
-                        } 
-                        if (scoreCounter >= 6) {
-                            console.log("He's on Fire!");
-                            // TODO on fire here
-                        }
-                        if (scoreCounter < 3) {
-                            // TODO remove heat here
-                        }
+                        addStreak(scoreCounter, highScore);
                         newGame.renderShot();
                     },1600);
                     setTimeout(function(){
@@ -186,6 +193,7 @@ let gamePlay = false;
                     setTimeout(function(){
                         newGame.renderShot();
                         tallyScore(scoreCounter, highScore);
+                        addStreak(scoreCounter, highScore, 'brick');
                     },880);
 
                     setTimeout(function(){

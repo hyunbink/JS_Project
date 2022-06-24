@@ -146,11 +146,8 @@ a img {
 } */
 #scoreBoard {
   position: absolute;
-  /* color: white; */
   background: transparent;
   user-select: none;
-  /* background-color: red; */
-  /* border: solid 3px red; */
   height: 576px;
   width: 576px;
   display: flex;
@@ -158,10 +155,31 @@ a img {
   align-items: flex-end;
 }
 
+.streaks {
+  position: absolute;
+  background: transparent;
+  user-select: none;
+  height: 576px;
+  width: 576px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+#streak-holder {
+  /* width: 50px;
+  height: auto; */
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+#on-fire {
+  margin-left: 80px;
+}
+
 .scores {
   height: 120px;
   width: 200px;
-  /* background-color: rgba(0, 0, 0, 0.611); */
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -174,8 +192,6 @@ a img {
 }
 
 .score-label {
-  /* border: solid 3px aqua; */
-  /* width: 90px; */
   font-family: "score_boardregular";
   font-size: 40px;
   color: rgb(255, 166, 0);
@@ -188,16 +204,12 @@ a img {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  /* border: solid 3px green; */
 }
 
 #currentScore {
-  /* border: solid 3px purple; */
   width: 30px;
   text-align: end;
-  /* background-color: white; */
   margin-right: 10px;
-  /* color: black; */
   color: rgb(255, 166, 0);
   padding-right: 3px;
   font-family: "score_boardregular";
@@ -205,12 +217,9 @@ a img {
 }
 
 #highScore {
-  /* border: solid 3px purple; */
   width: 30px;
   text-align: end;
-  /* background-color: white; */
   margin-right: 10px;
-  /* color: black; */
   color: rgb(255, 166, 0);
   padding-right: 3px;
   font-family: "score_boardregular";
