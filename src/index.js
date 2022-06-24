@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const myCanvas = document.getElementsByTagName("canvas")[0];
     myCanvas.width = 576; //'100%';
     myCanvas.height = 576;//'100%';
-    // console.log("TESTING Pushed 11:21")
     // Make it visually fill the positioned parent
 //   myCanvas.style.width ='100%';
 //   myCanvas.style.height='100%';
@@ -103,7 +102,6 @@ let gamePlay = false;
             setTimeout(function(){
                 newGame.player.status = 'release';
                 newGame.renderShot();
-                // TODO ball animation
                 if (newGame.xMakeArr().includes(userXAttempt)) {
                     scoreCounter += 1;
 
@@ -172,7 +170,8 @@ let gamePlay = false;
                         newGame.player.status = 'idle';
                         newGame.renderShot();
                         gamePlay = true;
-                        userClick = 1;             
+                        userClick = 1;  
+                        console.log("space to play"); // TODO instruct here 
                     },2700);
                 } else {
                     ballMissAnimation.forEach(i => {
@@ -216,6 +215,7 @@ let gamePlay = false;
                         newGame.renderShot();
                         gamePlay = true;
                         userClick = 1;
+                        console.log("space to play") // TODO instruct here
                         if (highScore === scoreCounter && scoreCounter !== 0) {
                             // TODO new HIGH SCORE animation;
                             console.log("NEW HIGH SCORE");
@@ -224,6 +224,7 @@ let gamePlay = false;
                 }
             }, 300)
         }   else if (gamePlay) {
+            console.log("remove instruction"); // TODO remove instructions here
             count = 200;
             newGame.movingLineXPos.x = 200;
             stopCount = false;

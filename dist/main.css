@@ -38,6 +38,7 @@ height: 100vh; */
   position: absolute;
   height: 576px;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 #coverPageDiv img {
@@ -168,7 +169,7 @@ a img {
   justify-content: space-evenly;
   align-items: center;
   border-radius: 5px;
-  border: solid 2px rgba(255, 255, 255, 0.663);
+  border: solid 2px rgba(255, 255, 255, 0.864);
 }
 
 .score-label {
