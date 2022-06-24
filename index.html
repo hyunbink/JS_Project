@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
     <title>Retro-Hoops</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
   </head>
   
   
@@ -14,20 +15,20 @@
   <body>
     <div id="header">
       <div id="headerSplit">
-      <div id="titleDiv">
-        <img src="./images/title_header.png" alt="Retro-Hoops">
-      </div>
-      <div id="audioDiv">
-        <audio id="soundControl" controls loop>
-          <source src="./audio/planetrock.mp3" type="audio/ogg">
-          Your browser does not support this audio element.
-        </audio>
-      </div>
-      <nav class="gameNav">
-        <a href="https://github.com/hyunbink"><img src="./images/githublogo.png" alt="github logo"></a>
-        <a href="https://www.linkedin.com/in/matia-kim/"><img src="./images/linkedinlogo.png" alt="linkedin logo"></a>
-        <!-- TODO get a new sound logo ? || update sound bar? -->
-      </nav>
+        <div id="titleDiv">
+          <img src="./images/title_header.png" alt="Retro-Hoops">
+        </div>
+        <div id="audioDiv">
+          <audio id="soundControl" controls autoplay loop >
+            <source src="./audio/planetrock.mp3" type="audio/ogg">
+            Your browser does not support this audio element :(
+            <!-- TODO get a new sound logo ? || update sound bar? -->
+          </audio>
+          <nav class="gameNav">
+            <a class="nav-links" href="https://github.com/hyunbink"><img class="link-img-g" src="./images/githublogo.png" alt="github logo"></a>
+            <a class="nav-links" href="https://www.linkedin.com/in/matia-kim/"><img class="link-img-l" src="./images/linkedinlogo.png" alt="linkedin logo"></a>
+          </nav>
+        </div>
       </div>
     </div>
     
