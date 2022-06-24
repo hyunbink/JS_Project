@@ -1,9 +1,8 @@
 export default class Net {
-    // make condition for make, miss, shot attempt;
     constructor(status) {
         if (!status) status = 'idle'
         this.status = status
-        this.position = [130, 233];
+        this.position = [130, 233]; 
         this.width = 50;
         this.height = 40;
         this.image = new Image();

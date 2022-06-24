@@ -3,7 +3,7 @@
 export class Player {
     constructor(status) {
         this.status = status;
-        this.position = [308, 265];
+        this.position = [308, 265]; //265
         this.width = 30;
         this.height = 200;
         this.image = new Image();

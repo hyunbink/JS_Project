@@ -1,6 +1,6 @@
 import { Player } from "./player";
 import  Net  from "./net";
-import { Ball } from "./ball";
+import Ball from "./ball";
 import {lineSpeed} from ".";
 import { extraPlayer } from "./extraPlayer";
 
@@ -45,9 +45,8 @@ class Game {
         this.player.draw(this.c);
         this.net.draw(this.c);
         this.extraPlayer.draw(this.c);
-        // this.ball.draw(this.c);
+        this.ball.draw(this.c);
     };
-
 
     updateX(){   
         this.movingLineXPos.x += lineSpeed();
