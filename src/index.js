@@ -35,13 +35,13 @@ let currentRecord;
 const addStreak = (scoreCounter, highScore, brick) => {
     const streak = document.getElementById("streak-holder")
     if (scoreCounter >= 3 && scoreCounter < 6) {
-        streak.innerHTML = "<img src='../images/heating_up.png'></img>";
+        streak.innerHTML = "<img src='./images/heating_up.png'></img>";
         // streak.innerHTML = <img src='./images/heating_up.png'></img>
     } else if (scoreCounter >= 6) {
-        streak.innerHTML = "<img id='on-fire' src='../images/on_fire.png'></img>";
+        streak.innerHTML = "<img id='on-fire' src='./images/on_fire.png'></img>";
         // streak.innerHTML = <img src='./images/on_fire.png'></img>
     } else if (brick === 'brick') {
-        streak.innerHTML = "<img id='brick-img' src='../images/brick.png'></img>";
+        streak.innerHTML = "<img id='brick-img' src='./images/brick.png'></img>";
         // streak.innerHTML = <img id='on-fire' src='./images/brick.png'></img>;
         setTimeout(()=>{
             streak.innerHTML = ""
@@ -52,17 +52,17 @@ const addStreak = (scoreCounter, highScore, brick) => {
 const newRecord = (bool) => {
     const record = document.getElementById("record-holder")
     if (bool === true) {
-        record.innerHTML = "<img id='new-record' src='../images/new_record.png'></img>";
+        record.innerHTML = "<img id='new-record' src='./images/new_record.png'></img>";
         // streak.innerHTML = <img src='./images/new_record.png'></img>;
         setTimeout(()=>{
-            record.innerHTML = "<img id='play-again' src='../images/play-again.png'></img>";
+            record.innerHTML = "<img id='play-again' src='./images/play-again.png'></img>";
         // record.innerHTML = <img src='./images/play-again.png'></img>;
         }, 2400);
     } else if (bool === 'shoot') {
-        record.innerHTML = "<img id='play-again' src='../images/shoot-again.png'></img>";
+        record.innerHTML = "<img id='play-again' src='./images/shoot-again.png'></img>";
         // record.innerHTML = <img src='./images/shoot-again.png'></img>;
     } else if (bool === 'again') {
-        record.innerHTML = "<img id='play-again' src='../images/play-again.png'></img>";
+        record.innerHTML = "<img id='play-again' src='./images/play-again.png'></img>";
         // record.innerHTML = <img src='./images/play-again.png'></img>;
     } else {
         record.innerHTML = ""
