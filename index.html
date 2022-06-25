@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" href="./fonts/score_board/webfontkit-20220624-170238/stylesheet.css" />
     <script src="./dist/main.js"></script>
     <title>Retro-Hoops</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
   </head>
-  
-  
   
   <body>
     <div id="header">
@@ -37,14 +36,28 @@
         <div id="coverPageDiv">
           <img src="./images/title_cover.png" alt="Press 'Space' to Play!">
         </div>
+
         <div id="scoreBoard">
-          <div><span>
-        <img id="score" src="./images/score.png" alt="Score:">
-          </span><span id="currentScore">0</span></div>
-          <div><span>
-        <img id='record' src="./images/record.png" alt="Record:">
-          </span><span id="highScore">0</span></div>
+          <div class="scores">
+              <div class="score-wrapper">
+                <div class="score-label"> Score: </div>
+                <div id="currentScore">0</div>
+              </div>
+              <div class="score-wrapper">
+                <div class="score-label"> Record:</div>
+                <div id="highScore">0</div>
+              </div>
+            </div>
         </div>
+
+        <div class="streaks">
+          <div id="streak-holder"></div>
+        </div>
+
+        <div class="record">
+          <div id="record-holder"></div>
+        </div>
+
         <canvas id="canvas"></canvas>
         </div>
         <div id="instructions">

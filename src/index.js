@@ -30,6 +30,44 @@ const tallyScore = function(scoreCounter, highScore){
     score.innerHTML = scoreCounter;
     record.innerHTML = highScore;
 }
+let currentRecord;
+
+const addStreak = (scoreCounter, highScore, brick) => {
+    const streak = document.getElementById("streak-holder")
+    if (scoreCounter >= 3 && scoreCounter < 6) {
+        streak.innerHTML = "<img src='../images/heating_up.png'></img>";
+        // streak.innerHTML = <img src='./images/heating_up.png'></img>
+    } else if (scoreCounter >= 6) {
+        streak.innerHTML = "<img id='on-fire' src='../images/on_fire.png'></img>";
+        // streak.innerHTML = <img src='./images/on_fire.png'></img>
+    } else if (brick === 'brick') {
+        streak.innerHTML = "<img id='brick-img' src='../images/brick.png'></img>";
+        // streak.innerHTML = <img id='on-fire' src='./images/brick.png'></img>;
+        setTimeout(()=>{
+            streak.innerHTML = ""
+        }, 2400);
+    }
+}
+
+const newRecord = (bool) => {
+    const record = document.getElementById("record-holder")
+    if (bool === true) {
+        record.innerHTML = "<img id='new-record' src='../images/new_record.png'></img>";
+        // streak.innerHTML = <img src='./images/new_record.png'></img>;
+        setTimeout(()=>{
+            record.innerHTML = "<img id='play-again' src='../images/play-again.png'></img>";
+        // record.innerHTML = <img src='./images/play-again.png'></img>;
+        }, 2400);
+    } else if (bool === 'shoot') {
+        record.innerHTML = "<img id='play-again' src='../images/shoot-again.png'></img>";
+        // record.innerHTML = <img src='./images/shoot-again.png'></img>;
+    } else if (bool === 'again') {
+        record.innerHTML = "<img id='play-again' src='../images/play-again.png'></img>";
+        // record.innerHTML = <img src='./images/play-again.png'></img>;
+    } else {
+        record.innerHTML = ""
+    }
+    }
 
 const coverPage = function(bool = true){
     const coverPage = document.getElementById("coverPageDiv");
@@ -44,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const myCanvas = document.getElementsByTagName("canvas")[0];
     myCanvas.width = 576; //'100%';
     myCanvas.height = 576;//'100%';
-    // console.log("TESTING Pushed 11:21")
     // Make it visually fill the positioned parent
 //   myCanvas.style.width ='100%';
 //   myCanvas.style.height='100%';
@@ -103,7 +140,6 @@ let gamePlay = false;
             setTimeout(function(){
                 newGame.player.status = 'release';
                 newGame.renderShot();
-                // TODO ball animation
                 if (newGame.xMakeArr().includes(userXAttempt)) {
                     scoreCounter += 1;
 
@@ -136,17 +172,7 @@ let gamePlay = false;
                             highScore = scoreCounter;
                         } 
                         tallyScore(scoreCounter, highScore);
-                        if (scoreCounter >= 3 && scoreCounter < 6) {
-                            console.log("Heating Up");
-                            // TODO heating up here
-                        } 
-                        if (scoreCounter >= 6) {
-                            console.log("He's on Fire!");
-                            // TODO on fire here
-                        }
-                        if (scoreCounter < 3) {
-                            // TODO remove heat here
-                        }
+                        addStreak(scoreCounter, highScore);
                         newGame.renderShot();
                     },1600);
                     setTimeout(function(){
@@ -172,7 +198,8 @@ let gamePlay = false;
                         newGame.player.status = 'idle';
                         newGame.renderShot();
                         gamePlay = true;
-                        userClick = 1;             
+                        userClick = 1;  
+                        newRecord('shoot')
                     },2700);
                 } else {
                     ballMissAnimation.forEach(i => {
@@ -182,11 +209,20 @@ let gamePlay = false;
                             newGame.renderShot();
                         }, ((i * 80)))
                     })
-                        scoreCounter = 0;
-
+                    
                     setTimeout(function(){
                         newGame.renderShot();
-                        tallyScore(scoreCounter, highScore);
+                        if (highScore === scoreCounter && scoreCounter !== 0 && scoreCounter !== currentRecord) {
+                            scoreCounter = 0;
+                            newRecord(true);
+                            addStreak(scoreCounter, highScore, 'na');
+                            tallyScore(scoreCounter, highScore);
+                            currentRecord = highScore;
+                        } else {
+                            scoreCounter = 0;
+                            tallyScore(scoreCounter, highScore);
+                            addStreak(scoreCounter, highScore, 'brick');
+                        }
                     },880);
 
                     setTimeout(function(){
@@ -216,10 +252,7 @@ let gamePlay = false;
                         newGame.renderShot();
                         gamePlay = true;
                         userClick = 1;
-                        if (highScore === scoreCounter && scoreCounter !== 0) {
-                            // TODO new HIGH SCORE animation;
-                            console.log("NEW HIGH SCORE");
-                        } 
+                        newRecord('again')
                     },1800);
                 }
             }, 300)
@@ -230,6 +263,10 @@ let gamePlay = false;
             newGame.player.status = 'idle';
             animate();
             userClick += 1;
+            const recordHolder = document.getElementById("record-holder");
+            const streakHolder = document.getElementById("streak-holder")
+            streakHolder.innerHTML = ""
+            recordHolder.innerHTML = ""
         }
     });
 });
