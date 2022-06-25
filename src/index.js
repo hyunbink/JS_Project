@@ -35,7 +35,8 @@ let currentRecord;
 const addStreak = (scoreCounter, highScore, brick) => {
     const streak = document.getElementById("streak-holder")
     if (scoreCounter >= 3 && scoreCounter < 6) {
-        streak.innerHTML = "<img src='/images/heating_up.png'></img>";
+        streak.innerHTML = "<img src='/images/heating_up.png'></img>"; // https://github.com/hyunbink/Retro-Hoops/tree/main/images ??
+        streak.innerHTML = "<img src='https://github.com/hyunbink/Retro-Hoops/tree/main/images/heating_up.png'></img>";
     } else if (scoreCounter >= 6) {
         streak.innerHTML = "<img id='on-fire' src='/images/on_fire.png'></img>";
     } else if (brick === 'brick') {
