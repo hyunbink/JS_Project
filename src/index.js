@@ -30,6 +30,7 @@ const tallyScore = function(scoreCounter, highScore){
     score.innerHTML = scoreCounter;
     record.innerHTML = highScore;
 }
+let currentRecord;
 
 const addStreak = (scoreCounter, highScore, brick) => {
     const streak = document.getElementById("streak-holder")
@@ -211,11 +212,12 @@ let gamePlay = false;
                     
                     setTimeout(function(){
                         newGame.renderShot();
-                        if (highScore === scoreCounter && scoreCounter !== 0) {
+                        if (highScore === scoreCounter && scoreCounter !== 0 && scoreCounter !== currentRecord) {
                             scoreCounter = 0;
                             newRecord(true);
                             addStreak(scoreCounter, highScore, 'na');
                             tallyScore(scoreCounter, highScore);
+                            currentRecord = highScore;
                         } else {
                             scoreCounter = 0;
                             tallyScore(scoreCounter, highScore);
