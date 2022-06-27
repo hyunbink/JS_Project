@@ -1,7 +1,4 @@
-// import { Ball } from "./ball";
 import Game from "./game_view";
-// import  Net  from "./net";
-// import { Player } from "./player";
 
 let scoreCounter = 0;
 let speed = 1;
@@ -35,7 +32,7 @@ let currentRecord;
 const addStreak = (scoreCounter, highScore, brick) => {
     const heating = document.getElementById("heat-img");
     const fire = document.getElementById("fire-img");
-    const brickImg = document.getElementById("brick-img")
+    const brickImg = document.getElementById("brick-img");
     if (scoreCounter >= 3 && scoreCounter < 6) {
         heating.style.display = 'flex';
     } else if (scoreCounter >= 6) {
@@ -51,31 +48,34 @@ const addStreak = (scoreCounter, highScore, brick) => {
     }
 }
 
+
 const newRecord = (bool) => {
-    const record = document.getElementById("record-holder");
-    const newRecord = document.getElementById("new-record");
-    const playAgain = document.getElementById("play-again");
-    const shootAgain = document.getElementById("shoot-again"); //need to change id to this
+    const newRecordEleId = document.getElementById("new-record");
+    const playAgainEleId = document.getElementById("play-again");
+    const shootAgainEleId = document.getElementById("shoot-again"); 
     if (bool === true) {
-        // record.innerHTML = "<img id='new-record' src='./images/new_record.png'></img>";
-        newRecord.style.display = 'flex';
+        newRecordEleId.style.display = 'flex';
+        playAgainEleId.style.display = 'none';
         setTimeout(()=>{
-            newRecord.style.display = 'none';
-            playAgain.style.display = 'flex';
-            // record.innerHTML = "<img id='play-again' src='./images/play-again.png'></img>";
+            newRecordEleId.style.display = 'none';
+            // playAgainEleId.style.display = 'flex';
         }, 2400);
     } else if (bool === 'shoot') {
-        record.innerHTML = "<img id='play-again' src='./images/shoot-again.png'></img>";
+        newRecordEleId.style.display = 'none';
+        playAgainEleId.style.display = 'none';
+        shootAgainEleId.style.display = 'flex';
     } else if (bool === 'again') {
-        record.innerHTML = "<img id='play-again' src='./images/play-again.png'></img>";
+        shootAgainEleId.style.display = 'none';
+        playAgainEleId.style.display = 'flex';
+        newRecordEleId.style.display = 'none';
     } else {
-        record.style.display = 'none'
+        newRecordEleId.style.display = 'none';
+        playAgainEleId.style.display = 'flex';
     }
-    }
+}
 
 const coverPage = function(bool = true){
     const coverPage = document.getElementById("coverPageDiv");
-    // coverPage.parentNode.removeChild(coverPage);
     if (bool) coverPage.style.display = 'none';
     else coverPage.style.display = 'block';
 }
@@ -125,6 +125,7 @@ const ballShotAnimation = [1,2,3,4,5,6,7,8,9,10,11];
 const ballMissAnimation = [1,2,3,4,5,6,7,8,9,10,11,12];
 const ballPassAnimation = [1,2,3,4,5,6,7,8,9];
 let gamePlay = false;
+let newScoreRecord;
     document.addEventListener("keydown", function(event){
         if (event.key !== ' ') {
             return;
@@ -222,10 +223,12 @@ let gamePlay = false;
                             addStreak(scoreCounter, highScore, 'na');
                             tallyScore(scoreCounter, highScore);
                             currentRecord = highScore;
+                            newScoreRecord = true;
                         } else {
                             scoreCounter = 0;
                             tallyScore(scoreCounter, highScore);
                             addStreak(scoreCounter, highScore, 'brick');
+                            newScoreRecord = false;
                         }
                     },880);
 
@@ -254,10 +257,19 @@ let gamePlay = false;
                         newGame.player.status = 'idle';
                         newGame.ball.status = 'idle';
                         newGame.renderShot();
-                        gamePlay = true;
-                        userClick = 1;
-                        newRecord('again')
+                        if (newScoreRecord) {
+                            setTimeout(()=> {
+                                newRecord('again');
+                                gamePlay = true;
+                                userClick = 1;
+                            }, 600); 
+                        } else {
+                            newRecord('again');
+                                gamePlay = true;
+                                userClick = 1;
+                        }
                     },1800);
+                    
                 }
             }, 300)
         }   else if (gamePlay) {
@@ -267,10 +279,20 @@ let gamePlay = false;
             newGame.player.status = 'idle';
             animate();
             userClick += 1;
-            // const recordHolder = document.getElementById("record-holder");
-            // const streakHolder = document.getElementById("streak-holder")
-            // streakHolder.innerHTML = ""
-            // recordHolder.innerHTML = ""
+
+            const heatingEleIdImg = document.getElementById("heat-img");
+            const fireEleIdImg = document.getElementById("fire-img");
+            const brickEleIdImg = document.getElementById("brick-img");
+            brickEleIdImg.style.display = 'none';
+            heatingEleIdImg.style.display = 'none';
+            fireEleIdImg.style.display = 'none';
+
+            const newRecordEleIdImg = document.getElementById("new-record");
+            const playAgainEleIdImg = document.getElementById("play-again");
+            const shootAgainEleIdImg = document.getElementById("shoot-again");
+            newRecordEleIdImg.style.display = 'none';
+            playAgainEleIdImg.style.display = 'none';
+            shootAgainEleIdImg.style.display = 'none';
         }
     });
 });

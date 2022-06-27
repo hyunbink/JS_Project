@@ -220,16 +220,17 @@ a img {
   display: none;
 }
 
+#shoot-again {
+  width: 300px;
+  height: auto;
+  display: none;
+}
+
 #record-holder {
   width: fit-content;
   height: fit-content;
 }
 
-/* #rew-record-img{
-  margin-left: 80px;
-  width: 300px;
-  height: auto;
-} */
 .scores {
   height: 120px;
   width: 200px;
