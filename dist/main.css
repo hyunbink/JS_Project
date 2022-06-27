@@ -173,11 +173,12 @@ a img {
   margin-left: 15px;
 }
 
-#heat-holder {
+#streak-holder {
   margin-bottom: 30px;
   margin-left: 15px;
 }
 
+/* streaks */
 #heat-img {
   display: none;
 }
@@ -188,10 +189,10 @@ a img {
 
 #fire-img {
   display: none;
-  margin-bottom: 30px;
   margin-left: 70px;
 }
 
+/* streaks */
 .record {
   position: absolute;
   background: transparent;
@@ -210,15 +211,13 @@ a img {
 #new-record {
   width: 300px;
   height: auto;
+  display: none;
 }
 
 #play-again {
   width: 300px;
   height: auto;
-}
-
-#on-fire {
-  margin-left: 80px;
+  display: none;
 }
 
 #record-holder {

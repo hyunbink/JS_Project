@@ -42,9 +42,9 @@ const addStreak = (scoreCounter, highScore, brick) => {
         heating.style.display = 'none';
         fire.style.display = 'flex';
     } else if (brick === 'brick') {
-        brickImg.style.display = 'flex';
         fire.style.display = 'none';
         heating.style.display = 'none';
+        brickImg.style.display = 'flex';
         setTimeout(()=>{
             brickImg.style.display = 'none';
         }, 2400);
@@ -52,11 +52,17 @@ const addStreak = (scoreCounter, highScore, brick) => {
 }
 
 const newRecord = (bool) => {
-    const record = document.getElementById("record-holder")
+    const record = document.getElementById("record-holder");
+    const newRecord = document.getElementById("new-record");
+    const playAgain = document.getElementById("play-again");
+    const shootAgain = document.getElementById("shoot-again"); //need to change id to this
     if (bool === true) {
-        record.innerHTML = "<img id='new-record' src='./images/new_record.png'></img>";
+        // record.innerHTML = "<img id='new-record' src='./images/new_record.png'></img>";
+        newRecord.style.display = 'flex';
         setTimeout(()=>{
-            record.innerHTML = "<img id='play-again' src='./images/play-again.png'></img>";
+            newRecord.style.display = 'none';
+            playAgain.style.display = 'flex';
+            // record.innerHTML = "<img id='play-again' src='./images/play-again.png'></img>";
         }, 2400);
     } else if (bool === 'shoot') {
         record.innerHTML = "<img id='play-again' src='./images/shoot-again.png'></img>";
@@ -261,10 +267,10 @@ let gamePlay = false;
             newGame.player.status = 'idle';
             animate();
             userClick += 1;
-            const recordHolder = document.getElementById("record-holder");
-            const streakHolder = document.getElementById("streak-holder")
-            streakHolder.innerHTML = ""
-            recordHolder.innerHTML = ""
+            // const recordHolder = document.getElementById("record-holder");
+            // const streakHolder = document.getElementById("streak-holder")
+            // streakHolder.innerHTML = ""
+            // recordHolder.innerHTML = ""
         }
     });
 });
