@@ -21,7 +21,6 @@
           <audio id="soundControl" controls autoplay loop >
             <source src="./audio/planetrock.mp3" type="audio/ogg">
             Your browser does not support this audio element :(
-            <!-- TODO get a new sound logo ? || update sound bar? -->
           </audio>
           <nav class="gameNav">
             <a class="nav-links" href="https://github.com/hyunbink"><img class="link-img-g" src="./images/githublogo.png" alt="github logo"></a>
@@ -50,12 +49,20 @@
             </div>
         </div>
 
-        <div class="streaks">
-          <div id="streak-holder"></div>
+        <div id='streak-wrapper' class="streaks">
+          <div id="streak-holder">
+            <img id="heat-img" src='./images/heating_up.png'></img>
+            <img id="fire-img" src='./images/on_fire.png'></img>
+            <img id="brick-img" src='./images/brick.png'></img>
+          </div>
         </div>
 
         <div class="record">
-          <div id="record-holder"></div>
+          <div id="record-holder">
+            <img id='new-record' src='./images/new_record.png'></img>
+            <img id='play-again' src='./images/play-again.png'></img>
+            <img id='shoot-again' src='./images/shoot-again.png'></img>
+          </div>
         </div>
 
         <canvas id="canvas"></canvas>

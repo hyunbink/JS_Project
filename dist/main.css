@@ -166,13 +166,33 @@ a img {
   align-items: flex-end;
 }
 
-#streak-holder {
+#brick-holder {
   /* width: 50px;
   height: auto; */
   margin-bottom: 30px;
   margin-left: 15px;
 }
 
+#streak-holder {
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+/* streaks */
+#heat-img {
+  display: none;
+}
+
+#brick-img {
+  display: none;
+}
+
+#fire-img {
+  display: none;
+  margin-left: 70px;
+}
+
+/* streaks */
 .record {
   position: absolute;
   background: transparent;
@@ -191,15 +211,19 @@ a img {
 #new-record {
   width: 300px;
   height: auto;
+  display: none;
 }
 
 #play-again {
   width: 300px;
   height: auto;
+  display: none;
 }
 
-#on-fire {
-  margin-left: 80px;
+#shoot-again {
+  width: 300px;
+  height: auto;
+  display: none;
 }
 
 #record-holder {
@@ -207,11 +231,6 @@ a img {
   height: fit-content;
 }
 
-/* #rew-record-img{
-  margin-left: 80px;
-  width: 300px;
-  height: auto;
-} */
 .scores {
   height: 120px;
   width: 200px;
