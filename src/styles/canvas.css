@@ -179,6 +179,9 @@ a img{
   margin-left: 15px;
 }
 
+#touch{
+  z-index: 1;
+}
 
 /* streaks */
 #heat-img{

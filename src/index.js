@@ -297,11 +297,11 @@ let newScoreRecord;
     });
 
     // for mobile
-    document.getElementById("canvasDiv").addEventListener("touchstart", function(event){
-        // if (event.key !== ' ') {
-        //     return;
-        // }; 
-
+    document.addEventListener("touchstart", function(event){
+        if (event.target.id !== 'touch' ) {
+            return;
+        } 
+        
         if (userClick === 0) {
             coverPage();
             gamePlay = true;
