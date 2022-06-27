@@ -39,11 +39,10 @@ const addStreak = (scoreCounter, highScore, brick) => {
     } else if (scoreCounter >= 6) {
         streak.innerHTML = "<img id='on-fire' src='./images/on_fire.png'></img>";
     } else if (brick === 'brick') {
-        streak.innerHTML = "<img id='brick-img' alt='brick-img' src=''></img>";
-        const brickImg = document.getElementById("brick-img");
-        brickImg.src = "/images/brick.png"
+        streak.innerHTML = <img id='brick-img' alt='brick-img' src="./images/brick.png"></img>;
         setTimeout(()=>{
-            streak.innerHTML = ""
+            // streak.style.display = 'none'
+            streak.innerHTML = ''
         }, 2400);
     }
 }
@@ -60,7 +59,7 @@ const newRecord = (bool) => {
     } else if (bool === 'again') {
         record.innerHTML = "<img id='play-again' src='./images/play-again.png'></img>";
     } else {
-        record.innerHTML = ""
+        record.style.display = 'none'
     }
     }
 
