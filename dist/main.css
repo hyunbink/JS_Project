@@ -369,6 +369,16 @@ li {
     overflow: auto;
   }
 }
+@media (max-height: 600px) {
+  body {
+    zoom: 40%;
+  }
+}
+@media (max-width: 390px) {
+  body {
+    zoom: 40%;
+  }
+}
 /* @media (max-height: 780px) and (max-width: 820px){
   body{
     display: flex;
