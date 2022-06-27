@@ -33,16 +33,20 @@ const tallyScore = function(scoreCounter, highScore){
 let currentRecord;
 
 const addStreak = (scoreCounter, highScore, brick) => {
-    const streak = document.getElementById("streak-holder")
+    const heating = document.getElementById("heat-img");
+    const fire = document.getElementById("fire-img");
+    const brickImg = document.getElementById("brick-img")
     if (scoreCounter >= 3 && scoreCounter < 6) {
-        streak.innerHTML = "<img src='./images/heating_up.png'></img>";
+        heating.style.display = 'flex';
     } else if (scoreCounter >= 6) {
-        streak.innerHTML = "<img id='on-fire' src='./images/on_fire.png'></img>";
+        heating.style.display = 'none';
+        fire.style.display = 'flex';
     } else if (brick === 'brick') {
-        streak.innerHTML = <img id='brick-img' alt='brick-img' src="./images/brick.png"></img>;
+        brickImg.style.display = 'flex';
+        fire.style.display = 'none';
+        heating.style.display = 'none';
         setTimeout(()=>{
-            // streak.style.display = 'none'
-            streak.innerHTML = ''
+            brickImg.style.display = 'none';
         }, 2400);
     }
 }
