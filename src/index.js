@@ -262,7 +262,7 @@ let newScoreRecord;
                                 newRecord('again');
                                 gamePlay = true;
                                 userClick = 1;
-                            }, 600); 
+                            }, 1000); 
                         } else {
                             newRecord('again');
                                 gamePlay = true;
@@ -295,6 +295,177 @@ let newScoreRecord;
             shootAgainEleIdImg.style.display = 'none';
         }
     });
+
+    // for mobile
+    document.addEventListener("touchstart", function(event){
+        // if (event.key !== ' ') {
+        //     return;
+        // }; 
+
+        if (userClick === 0) {
+            coverPage();
+            gamePlay = true;
+            userClick += 1;
+        }
+
+        if (userClick % 2 === 0 && gamePlay){
+            gamePlay = false;
+            stopAnimate();
+            newGame.player.status = 'shooting';
+            newGame.renderShot();
+            setTimeout(function(){
+                newGame.player.status = 'release';
+                newGame.renderShot();
+                if (newGame.xMakeArr().includes(userXAttempt)) {
+                    scoreCounter += 1;
+
+                    ballShotAnimation.forEach(i => {
+                        setTimeout(()=>{
+                            newGame.net.status = 'idle';
+                            newGame.ball.status = `make${i}`; 
+                            newGame.renderShot();
+                        }, ((i * 80)))
+                    })
+                    
+                    setTimeout(function(){
+                        newGame.net.status = 'made1';
+                        newGame.ball.status = "none";
+                        newGame.renderShot();
+                    }, 1100);
+                    setTimeout( function(){
+                        newGame.net.status = 'made2'
+                        newGame.renderShot();
+                    },1300);
+                    setTimeout(function(){
+                        newGame.net.status = 'made3'
+                        newGame.renderShot();
+                    },1500);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'rebound';
+                        newGame.renderShot();
+                        if (scoreCounter > highScore){
+                            highScore = scoreCounter;
+                        } 
+                        tallyScore(scoreCounter, highScore);
+                        addStreak(scoreCounter, highScore);
+                        newGame.renderShot();
+                    },1600);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'pass';
+                        newGame.renderShot();
+                    },1900);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        ballPassAnimation.forEach(i => {
+                            setTimeout(()=>{
+                                newGame.net.status = 'idle';
+                                newGame.ball.status = `pass${i}`; 
+                                newGame.renderShot();
+                            }, ((i * 60) ))
+                        })
+                        newGame.renderShot();
+                    },2200);
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        newGame.player.status = 'idle';
+                        newGame.renderShot();
+                        gamePlay = true;
+                        userClick = 1;  
+                        newRecord('shoot')
+                    },2700);
+                } else {
+                    ballMissAnimation.forEach(i => {
+                        setTimeout(()=>{
+                            newGame.net.status = 'idle';
+                            newGame.ball.status = `miss${i}`; 
+                            newGame.renderShot();
+                        }, ((i * 80)))
+                    })
+                    
+                    setTimeout(function(){
+                        newGame.renderShot();
+                        if (highScore === scoreCounter && scoreCounter !== 0 && scoreCounter !== currentRecord) {
+                            scoreCounter = 0;
+                            newRecord(true);
+                            addStreak(scoreCounter, highScore, 'na');
+                            tallyScore(scoreCounter, highScore);
+                            currentRecord = highScore;
+                            newScoreRecord = true;
+                        } else {
+                            scoreCounter = 0;
+                            tallyScore(scoreCounter, highScore);
+                            addStreak(scoreCounter, highScore, 'brick');
+                            newScoreRecord = false;
+                        }
+                    },880);
+
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'rebound';
+                        newGame.renderShot();
+                    },1000);
+
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        ballPassAnimation.forEach(i => {
+                            setTimeout(()=>{
+                                newGame.net.status = 'idle';
+                                newGame.ball.status = `pass${i}`; 
+                                newGame.renderShot();
+                            }, ((i * 70) ))
+                        })
+                        newGame.renderShot();
+                    },1200);
+
+                    setTimeout(function(){
+                        newGame.net.status = 'idle'
+                        newGame.extraPlayer.status = 'idle';
+                        newGame.player.status = 'idle';
+                        newGame.ball.status = 'idle';
+                        newGame.renderShot();
+                        if (newScoreRecord) {
+                            setTimeout(()=> {
+                                newRecord('again');
+                                gamePlay = true;
+                                userClick = 1;
+                            }, 1000); 
+                        } else {
+                            newRecord('again');
+                                gamePlay = true;
+                                userClick = 1;
+                        }
+                    },1800);
+                    
+                }
+            }, 300)
+        }   else if (gamePlay) {
+            count = 200;
+            newGame.movingLineXPos.x = 200;
+            stopCount = false;
+            newGame.player.status = 'idle';
+            animate();
+            userClick += 1;
+
+            const heatingEleIdImg = document.getElementById("heat-img");
+            const fireEleIdImg = document.getElementById("fire-img");
+            const brickEleIdImg = document.getElementById("brick-img");
+            brickEleIdImg.style.display = 'none';
+            heatingEleIdImg.style.display = 'none';
+            fireEleIdImg.style.display = 'none';
+
+            const newRecordEleIdImg = document.getElementById("new-record");
+            const playAgainEleIdImg = document.getElementById("play-again");
+            const shootAgainEleIdImg = document.getElementById("shoot-again");
+            newRecordEleIdImg.style.display = 'none';
+            playAgainEleIdImg.style.display = 'none';
+            shootAgainEleIdImg.style.display = 'none';
+        }
+    })
 });
 
 
