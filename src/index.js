@@ -297,7 +297,7 @@ let newScoreRecord;
     });
 
     // for mobile
-    document.addEventListener("touchstart", function(event){
+    document.getElementById("canvas").addEventListener("touchstart", function(event){
         // if (event.key !== ' ') {
         //     return;
         // }; 
