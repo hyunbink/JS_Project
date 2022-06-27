@@ -41,7 +41,7 @@ const addStreak = (scoreCounter, highScore, brick) => {
     } else if (brick === 'brick') {
         streak.innerHTML = "<img id='brick-img' alt='brick-img' src=''></img>";
         const brickImg = document.getElementById("brick-img");
-        brickImg.src = "./images/brick.png"
+        brickImg.src = "/images/brick.png"
         setTimeout(()=>{
             streak.innerHTML = ""
         }, 2400);
