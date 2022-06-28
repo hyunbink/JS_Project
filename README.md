@@ -38,38 +38,25 @@ In Retro-Hoops, users will be able to: -->
   <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg"> npm
 </p>
 
+## Gameplay
 
-<!-- ## Features
+### Shot Attempt
+<img width="100%"  alt='shooting gif' src=''> 
 
-### User-Authentication
+### Score Streaks
+<img width="100%"  alt='heating-up gif' src=''>
 
+### Missing Animations
+<img width="100%"  alt='brick gif' src=""> 
 
-<img width="100%"  align="left" alt='login gif' src='https://github.com/hyunbink/Chillow/blob/main/gifs/user-auth.gif'> 
+### Mobile Compatibility
+<img width="100%" align="left"   alt='mobile gif' src=""> 
 
-* Users can login with as a Demo User
-* Error messages will be displayed accordingly
+## Looking Ahead
 
-
-
-### Search
-<img width="100%"  alt='search-listings-gif' src='https://github.com/hyunbink/Chillow/blob/main/gifs/search.gif'>
-
-* Users can search listings by Address or City
-
-
-### Save
-<img width="100%"  alt='save listings gif' src="https://github.com/hyunbink/Chillow/blob/main/gifs/saves.gif"> 
-
-* Users can toggle saves on property listings in which saved listings will be shown through link via dropdown
-
-### Create/Edit Listings
-
-<img width="100%"  alt='upload listings photos and map coordinates' src="https://github.com/hyunbink/Chillow/blob/main/gifs/create.gif"> 
-
-* Only logged in users can upload/edit their properties to sell.
-* Users can drag & drop property photos.
-* Users can pin their property on the map to get proper coordinates. -->
-
+* Incorporating event-related sound effects
+* Utilizing an online database to store user's records with usernames
+* Implement 3-pointers for more points
 
 <!-- Wireframe: 
 *bang*[Wireframe](/images/js_wireframe.png )
