@@ -2,7 +2,7 @@
 
 Background:
 
-Retro-Hoops is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. Difficulty to make a free-throw will depend on the current score (increasing in difficulty as score increases). The game will have background music/sound effects and visuals from free online sources.
+[Retro-Hoops](https://hyunbink.github.io/Retro-Hoops/) is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. Difficulty to make a free-throw will depend on the current score (increasing in difficulty as score increases) and visual effects will render depending on user's score.
 
 
 Functionality & MVPs:
