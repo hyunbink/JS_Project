@@ -371,22 +371,20 @@ li {
 }
 @media (max-width: 600px) {
   body {
-    zoom: 81%;
+    zoom: 75%;
   }
 }
-@media (max-height: 600px) {
-  #sound-control {
+/* @media (max-height: 600px) {
+  #sound-control{
     display: none;
   }
-
-  #gameDiv {
+  #gameDiv{
     margin-top: 8em;
   }
-
-  body {
+  body{
     zoom: 60%;
   }
-}
+} */
 @media (max-width: 450px) {
   #header {
     height: 140px;
