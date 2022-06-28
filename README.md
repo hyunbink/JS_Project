@@ -31,7 +31,7 @@ In Retro-Hoops, users will be able to: -->
   <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"> HTML5: Canvas API
 </p>
 <p align="left">
-  <img width="15" height="15" src="https://www.vectorlogo.zone/util/preview.html?image=/logos/js_webpack/js_webpack-icon.svg"> Webpack
+  <img width="15" height="15" src="https://github.com/webpack/media/blob/master/logo/icon.svg"> Webpack
 </p>
 <p align="left">
   <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg"> Babel
