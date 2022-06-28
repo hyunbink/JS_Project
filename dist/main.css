@@ -394,10 +394,9 @@ li {
     display: none;
   }
 
-  #gameDiv {
+  /* #gameDiv{
     margin-top: 8em;
-  }
-
+  } */
   body {
     zoom: 40%;
   }

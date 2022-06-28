@@ -1,5 +1,3 @@
-<!-- *bang*[Title](/images/title_header.png) -->
-
 <p align="center">
   <img width="300px" alt="Retro-Hoops-logo" height="auto" src="https://github.com/hyunbink/Retro-Hoops/blob/main/images/title_header.png">
 </p>
