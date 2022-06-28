@@ -374,6 +374,14 @@ li {
     height: 140px;
   }
 
+  #sound-control {
+    display: none;
+  }
+
+  #gameDiv {
+    margin-top: 4em;
+  }
+
   body {
     zoom: 40%;
   }
@@ -381,6 +389,14 @@ li {
 @media (max-width: 390px) {
   #header {
     height: 140px;
+  }
+
+  #sound-control {
+    display: none;
+  }
+
+  #gameDiv {
+    margin-top: 4em;
   }
 
   body {
