@@ -369,25 +369,12 @@ li {
     overflow: auto;
   }
 }
-@media (max-height: 600px) {
-  #sound-control {
-    display: none;
-  }
-
-  #gameDiv {
-    margin-top: 8em;
-  }
-
-  body {
-    zoom: 60%;
-  }
-}
 @media (max-width: 600px) {
   body {
     zoom: 81%;
   }
 }
-@media (max-height: 600px) and (max-width: 600px) {
+@media (max-height: 600px) {
   #sound-control {
     display: none;
   }
