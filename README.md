@@ -13,20 +13,33 @@ In Retro-Hoops, users will be able to:
 - utilize timed-input-detection to structure user's shot-attempt
 - utilize sprites for animation of player, ball, and net
 
-Wireframe: 
-![Wireframe](/images/js_wireframe.png )
-
-- Nav Links to have my info (Github, LinkedIn)
-- Instructions on right of Game Board
-- User/Player info to have image of NBA Player selected along implemented real stats
-
-
 
 Technologies, Libraries, APIs:
 - Canvas API to render game board
 - Webpack and Babel to bundle and transpile the source JavaScript code 
 - npm to manage project dependencies
+<!-- 
+## Technologies Used
 
+### Frontend
+
+<p align="left">
+  <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"> Javascript
+</p>
+<p align="left">
+  <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"> Canvas API
+</p> -->
+
+
+
+<!-- Wireframe: 
+[Wireframe](/images/js_wireframe.png )
+
+- Nav Links to have my info (Github, LinkedIn)
+- Instructions on right of Game Board
+- User/Player info to have image of NBA Player selected along implemented real stats -->
+
+<!-- 
 Implementation Timeline:
 
 Friday Afternoon & Weekend: 
@@ -60,4 +73,4 @@ After Thursday:
 * Make a function to do all animations/changes for me (clean up setTimeouts DRY)
 * Clean up code, get rid of console.logs, make it presentable to recruiters
 * Update readme’s
-* Make it mobile friendly
+* Make it mobile friendly -->
