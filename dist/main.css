@@ -370,11 +370,19 @@ li {
   }
 }
 @media (max-height: 600px) {
+  #header {
+    height: 140px;
+  }
+
   body {
     zoom: 40%;
   }
 }
 @media (max-width: 390px) {
+  #header {
+    height: 140px;
+  }
+
   body {
     zoom: 40%;
   }
