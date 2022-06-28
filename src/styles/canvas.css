@@ -385,6 +385,18 @@ li {
   }
 }
 
+@media (max-height: 600px) and (max-width: 600px){
+  #sound-control{
+    display: none;
+  }
+  #gameDiv{
+    margin-top: 8em;
+  }
+  body{
+    zoom: 60%;
+  }
+}
+
 @media (max-width: 450px){
   #header{
     height: 140px;
