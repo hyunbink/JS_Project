@@ -1,39 +1,80 @@
-![Title](/images/title_header.png)
+<!-- *bang*[Title](/images/title_header.png) -->
 
-Background:
+<p align="center">
+  <img width="180" alt="Retro-Hoops-logo" height="70" src="https://github.com/hyunbink/Retro-Hoops/blob/main/images/title_header.png">
+</p>
 
-[Retro-Hoops](https://hyunbink.github.io/Retro-Hoops/) is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. Difficulty to make a free-throw will depend on the current score (increasing in difficulty as score increases) and visual effects will render depending on user's score.
-
-
-Functionality & MVPs:
-
-In Retro-Hoops, users will be able to:
+[Retro-Hoops](https://hyunbink.github.io/Retro-Hoops/) is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. Difficulty to make a free-throw will depend on the current score (increasing in difficulty as score increases). Users will be able to:
 - experience event-dependent visuals (score-streaks/new-records/miss)
 - option to mute and un-mute background-music (non-mobile)
 - utilize timed-input-detection to structure user's shot-attempt
 - utilize sprites for animation of player, ball, and net
 
 
-Technologies, Libraries, APIs:
+<!-- Functionality & MVPs:
+
+In Retro-Hoops, users will be able to: -->
+
+
+
+<!-- Technologies, Libraries, APIs:
 - Canvas API to render game board
 - Webpack and Babel to bundle and transpile the source JavaScript code 
-- npm to manage project dependencies
-<!-- 
-## Technologies Used
+- npm to manage project dependencies -->
 
-### Frontend
+## Technologies Used
 
 <p align="left">
   <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"> Javascript
 </p>
 <p align="left">
-  <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"> Canvas API
-</p> -->
+  <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"> HTML5: Canvas API
+</p>
+<p align="left">
+  <img width="15" height="15" src="https://www.vectorlogo.zone/util/preview.html?image=/logos/js_webpack/js_webpack-icon.svg"> Webpack
+</p>
+<p align="left">
+  <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg"> Babel
+</p>
+<p align="left">
+  <img width="15" height="15" src="https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg"> npm
+</p>
 
+
+<!-- ## Features
+
+### User-Authentication
+
+
+<img width="100%"  align="left" alt='login gif' src='https://github.com/hyunbink/Chillow/blob/main/gifs/user-auth.gif'> 
+
+* Users can login with as a Demo User
+* Error messages will be displayed accordingly
+
+
+
+### Search
+<img width="100%"  alt='search-listings-gif' src='https://github.com/hyunbink/Chillow/blob/main/gifs/search.gif'>
+
+* Users can search listings by Address or City
+
+
+### Save
+<img width="100%"  alt='save listings gif' src="https://github.com/hyunbink/Chillow/blob/main/gifs/saves.gif"> 
+
+* Users can toggle saves on property listings in which saved listings will be shown through link via dropdown
+
+### Create/Edit Listings
+
+<img width="100%"  alt='upload listings photos and map coordinates' src="https://github.com/hyunbink/Chillow/blob/main/gifs/create.gif"> 
+
+* Only logged in users can upload/edit their properties to sell.
+* Users can drag & drop property photos.
+* Users can pin their property on the map to get proper coordinates. -->
 
 
 <!-- Wireframe: 
-[Wireframe](/images/js_wireframe.png )
+*bang*[Wireframe](/images/js_wireframe.png )
 
 - Nav Links to have my info (Github, LinkedIn)
 - Instructions on right of Game Board
