@@ -1,7 +1,7 @@
 <!-- *bang*[Title](/images/title_header.png) -->
 
 <p align="center">
-  <img width="180" alt="Retro-Hoops-logo" height="auto" src="https://github.com/hyunbink/Retro-Hoops/blob/main/images/title_header.png">
+  <img width="300px" alt="Retro-Hoops-logo" height="auto" src="https://github.com/hyunbink/Retro-Hoops/blob/main/images/title_header.png">
 </p>
 
 [Retro-Hoops](https://hyunbink.github.io/Retro-Hoops/) is a retro-style 2D game based on shooting basketball free-throws. The game will involve user timing/precision to reach the highest score possible. Difficulty to make a free-throw will depend on the current score (increasing in difficulty as score increases). Users will be able to:
