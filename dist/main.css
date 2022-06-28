@@ -329,8 +329,8 @@ li {
 
   #gameDiv {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
     position: relative;
@@ -374,17 +374,17 @@ li {
     zoom: 75%;
   }
 }
-/* @media (max-height: 600px) {
-  #sound-control{
+@media (max-height: 600px) {
+  /* #sound-control{
     display: none;
-  }
-  #gameDiv{
+  } */
+  /* #gameDiv{
     margin-top: 8em;
-  }
-  body{
+  } */
+  body {
     zoom: 60%;
   }
-} */
+}
 @media (max-width: 450px) {
   #header {
     height: 140px;
