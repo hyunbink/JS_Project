@@ -41,16 +41,17 @@ In Retro-Hoops, users will be able to: -->
 ## Gameplay
 
 ### Shot Attempt
-<img width="100%"  alt='shooting gif' src=''> 
+<img width="100%"  alt='shooting gif' src='https://github.com/hyunbink/Retro-Hoops/blob/main/gifs/shot_attempt.gif'> 
 
 ### Score Streaks
-<img width="100%"  alt='heating-up gif' src=''>
+<img width="100%"  alt='heating-up gif' src='https://github.com/hyunbink/Retro-Hoops/blob/main/gifs/score_streaks.gif'>
 
 ### Missing Animations
-<img width="100%"  alt='brick gif' src=""> 
+<img width="100%"  alt='brick gif' src="https://github.com/hyunbink/Retro-Hoops/blob/main/gifs/missing_animation.gif"> 
 
 ### Mobile Compatibility
-<img width="100%" align="left"   alt='mobile gif' src=""> 
+<img width="100%" align="left"   alt='mobile gif' src="https://github.com/hyunbink/Retro-Hoops/blob/main/gifs/mobile_gameplay.gif"> 
+
 
 ## Looking Ahead
 
