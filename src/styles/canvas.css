@@ -382,7 +382,7 @@ li {
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 600px){
   #header{
     height: 140px;
   }

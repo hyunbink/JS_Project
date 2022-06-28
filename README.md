@@ -8,22 +8,15 @@ Background:
 Functionality & MVPs:
 
 In Retro-Hoops, users will be able to:
-- experience event-dependent sound effects (WIP)
-- option to mute and un-mute background-music
+- experience event-dependent visuals (score-streaks/new-records/miss)
+- option to mute and un-mute background-music (non-mobile)
 - utilize timed-input-detection to structure user's shot-attempt
 - utilize sprites for animation of player, ball, and net
-- navigation links to select player, play game, reset game, and view high scores (WIP)
-
-<!-- In addition, this project will include:
-
-- An About modal describing the background and rules of the game
-- A production README -->
 
 Wireframe: 
 ![Wireframe](/images/js_wireframe.png )
 
 - Nav Links to have my info (Github, LinkedIn)
-- Game Nav to have Play, stop, reset, toggle sound
 - Instructions on right of Game Board
 - User/Player info to have image of NBA Player selected along implemented real stats
 
