@@ -50,7 +50,7 @@ In Retro-Hoops, users will be able to: -->
 <img width="100%"  alt='brick gif' src="https://github.com/hyunbink/Retro-Hoops/blob/main/gifs/missing_animation.gif"> 
 
 ### Mobile Compatibility
-<img width="50%" align="left"   alt='mobile gif' src="https://github.com/hyunbink/Retro-Hoops/blob/main/gifs/mobile_gameplay.gif"> 
+<img width="40%" align="left"   alt='mobile gif' src="https://github.com/hyunbink/Retro-Hoops/blob/main/gifs/mobile_gameplay.gif"> 
 
 
 ## Looking Ahead
